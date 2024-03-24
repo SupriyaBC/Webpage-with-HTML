@@ -1,0 +1,54 @@
+<div class="container">
+    <h2>Railway Application Form</h2>
+    <div *ngIf="showSuccessMessage" class="success-message">
+      Booking successful!
+    </div>
+    <link rel="stylesheet" href="style.css">
+    <!-- Personal Information -->
+    <div class="form-group">
+      <label for="name">Full Name:</label>
+      <input type="text" placeholder="Full Name" [(ngModel)]="name" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" placeholder="Email" [(ngModel)]="email" required>
+    </div>
+  
+    <!-- Journey Details -->
+    <div class="form-group">
+      <label for="origin">Origin Station:</label>
+      <input type="text" placeholder="Origin" [(ngModel)]="origin" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="destination">Destination Station:</label>
+      <input type="text" placeholder="Destination" [(ngModel)]="destination" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="date">Travel Date:</label>
+      <input type="date" [(ngModel)]="date" required>
+    </div>
+  
+    <!-- Additional Information -->
+    <div class="form-group">
+      <label for="count">Number of Passengers:</label>
+      <input type="number" placeholder="Passenger count" [(ngModel)]="count" min="1" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="economy">Class:</label>
+      <select id="economy" name="economy" [(ngModel)]="economy" required>
+        <option value="economy">Economy</option>
+        <option value="firstClass">First Class</option>
+      </select>
+    </div>
+  
+    <div class="submit-container">
+      <div class="submit" (click)="handleBooking()">
+        BOOK
+      </div>
+    </div>
+  </div>
+  
